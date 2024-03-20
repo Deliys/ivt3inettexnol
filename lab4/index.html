@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Shapes</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        const shapes = [
+          ["circle", 50, 50, 10],
+          ["square", 150, 50, 25],
+          ["ellipse", 200, 200, 30, 40]
+        ];
+
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawCircle(x, y, radius) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        function drawSquare(x, y, size) {
+            ctx.fillRect(x, y, size, size);
+        }
+
+        function drawEllipse(x, y, radiusX, radiusY) {
+            ctx.beginPath();
+            ctx.ellipse(x, y, radiusX, radiusY, 0, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        function drawShapes() {
+            for (let shape of shapes) {
+                switch (shape[0]) {
+                    case "circle":
+                        drawCircle(shape[1], shape[2], shape[3]);
+                        break;
+                    case "square":
+                        drawSquare(shape[1], shape[2], shape[3]);
+                        break;
+                    case "ellipse":
+                        drawEllipse(shape[1], shape[2], shape[3], shape[4]);
+                        break;
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawShapes();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

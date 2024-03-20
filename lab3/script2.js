@@ -17,6 +17,14 @@ document.getElementById('changeStyleButton').addEventListener('click', function(
         item.style.fontWeight = 'bold';
     });
 });
+document.getElementById('changeStyleButtonw').addEventListener('click', function() {
+    let menuItems = document.querySelectorAll('#menu li');
+    
+    menuItems.forEach(item => {
+        item.style.color = 'red';
+        item.style.fontWeight = 'bold';
+    });
+});
 
 // Шаг 3: Поиск строки в пунктах меню с подсветкой найденных результатов
 document.getElementById('searchInput').addEventListener('input', function() {

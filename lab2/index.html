@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Chokokutai&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chokokutai&display=swap" rel="stylesheet">
+<style type="text/css">
+	.center{
+		display: flex;
+		justify-content: center;
+
+
+	}
+	.block{
+		width: 600px;
+		justify-content: normal;
+		background-color: #ccc;
+		padding: 50px;
+		border-radius: 20px;
+	}
+
+	  table {
+    border-collapse: collapse;
+    width: 500px;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .left{
+  	width: 150px;
+  	margin-right: 20px;
+  	height: auto;
+  }
+
+  .hmmm{
+  	color:#fff;
+  	background-color: #000;
+
+  }
+  .hmmm:hover{
+  	color: #000;
+  	background-color: red;
+  }
+  .transformeddd {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(45deg);
+}
+
+.buttonn {
+     transition: background-color 0.3s ease;
+   }
+
+   .buttonn:hover {
+     background-color: #ff0000;
+   }
+
+
+/* Стили по умолчанию */
+.element {
+    background-color: blue; /* синий цвет */
+}
+
+/* Медиа-запрос для устройств в горизонтальной ориентации */
+@media (orientation: landscape) {
+    .element {
+        background-color: green; /* зеленый цвет */
+    }
+}
+
+/* Медиа-запрос для устройств в вертикальной ориентации */
+@media (orientation: portrait) {
+    .element {
+        background-color: red; /* красный цвет */
+    }
+}
+   @keyframes move {
+     0% { transform: translateX(0); }
+     50% { transform: translateX(100px); }
+     100% { transform: translateX(0); }
+   }
+
+   .boxx {
+     animation: move 2s infinite;
+   }
+   
+
+</style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<div class="center">
+	<div class="block block left"><p>
+		<ul style="height: min(0, 0);">
+  <li>div</li>
+  <li>span</li>
+  <li>a</li>
+  <li>p</li>
+  <li>img</li>
+  <li>table</li>
+  <li>ul</li>
+  <li>h1-3</li>
+  <li>iframe</li>
+  <li>meta (настроить кодировку, keywords, description)</li>
+  <li>элементы форм (input, select, button и пр.)</li>
+  <li>форматирование текста</li>
+  <li>тэг picture + source для выбора изображений</li>
+</ul>
+	</p></div>
+	<div class="block">
+		<p>задание 1</p>
+	<table>
+  <tr>
+    <th>div</th>
+    <th><div style="background-color: red;">я div красного цвета</div></th>
+  </tr>
+  <tr>
+    <td>span </td>
+    <td>Ячейка 1-2</td>
+  </tr>
+  <tr>
+    <td>a</td>
+    <td><a href="#">ссылка в никуда</a></td>
+  </tr>
+  <tr>
+    <td>p</td>
+    <td><p>война и мир , война и наверное мир</p></td>
+  </tr>
+  <tr>
+    <td>img</td>
+    <td><img width="50px" src="https://otkritkis.com/wp-content/uploads/2021/11/1225374.jpg" /></td>
+  </tr>
+  <tr>
+    <td>table</td>
+    <td><table><tr><th>1</th><th>1</th></tr><tr><th>1</th><th>1</th></tr></table></td>
+  </tr>
+  <tr>
+    <td>ul</td>
+    <td>  <ul>
+	    <li>самолет</li>
+	    <li>сочи</li>
+	    <li>Отдых</li>
+  </ul>
+  </td>
+  </tr>
+  <tr>
+    <td>h1-3</td>
+    <td>	    
+    	<H1>самолет</H1>
+	    <h2>сочи</h2>
+	    <h3>Отдых</h3>
+	</td>
+  </tr>
+  <tr>
+    <td>iframe</td>
+    <td><iframe width="400px"  src="https://www.youtube.com/embed/q1pBwQl6zZ0?si=HBKaVKvzS2jy0Tcx&amp;controls=0" title="iframe" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
+  </tr>
+
+    <tr>
+
+    <td>meta (настроить кодировку, keywords, description)</td>
+    <td>
+          <p>1. &lt;meta charset="UTF-8"&gt; указывает кодировку документа на UTF-8.</p>
+          <p>2. &lt;meta name="description" content="учеба"&gt; задает описание страницы.</p>
+          <p>3. &lt;meta name="keywords" content="хмм , нет , да "&gt;</p>
+        
+  	</tr>
+
+
+    <tr>
+	    <td>элементы форм (input, select, button и пр.)</td>
+    <td>
+		  <form action="/submit-form" method="post">
+		    <label for="username">Имя пользователя:</label><br>
+		    <input type="text" id="username" name="username"><br><br>
+		    
+		    <label for="email">Email:</label><br>
+		    <input type="email" id="email" name="email"><br><br>
+		    
+		    <label for="gender">Пол:</label><br>
+		    <select id="gender" name="gender">
+		      <option value="male">Мужской</option>
+		      <option value="female">Женский</option>
+		    </select><br><br>
+		    
+		    <label for="message">Сообщение:</label><br>
+		    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+		    
+	
+		    
+		    
+		    <button type="submit">Отправить</button>
+		  </form></td>
+        
+  	</tr>
+
+  	 <tr>
+	    <td>форматирование текста</td>
+    	<td>
+    		<div style="display:flex ;justify-content: center;">
+    		<div>
+    			<p><strong>полужирный</strong>.</p>
+	    		<p><em>курсивом</em>.</p>
+	    		<p><u>подчеркнут</u>.</p>
+	    		<p><del>зачеркнут</del>.</p>
+	    		<p><u>подчеркнут</u>.</p>
+	    		<p><del>зачеркнут</del>.</p>
+    		</div>
+    		<div>
+				<h1>Заголовок 1</h1>
+				<h2>Заголовок 2</h2>
+				<h3>Заголовок 3</h3>
+				<h4>Заголовок 4</h4>
+				<h5>Заголовок 5</h5>
+				<h6>Заголовок 6</h6>
+    		</div>
+    		</div>
+
+
+    	</td>	  
+  	</tr>
+  	 <tr>
+	    <td>тэг picture + source для выбора изображений</td>
+    	<td>
+			<picture>
+			  <source media="(min-width: 768px)" srcset="https://avatars.mds.yandex.net/i?id=e36378ab326b9197cc326dd02e530488bb83fc90-3872711-images-thumbs&n=13">
+			  <source media="(min-width: 400px)" srcset="https://famt.ru/wp-content/uploads/2019/05/sonnik-govoryaschiy-kot.jpg">
+			  <img src="https://famt.ru/wp-content/uploads/2019/05/sonnik-govoryaschiy-kot.jpg" alt="Альтернативный текст">
+			</picture>
+    	</td>	  
+  	</tr>
+</table>
+
+	</div>
+</div>
+<div style="height: 50px;"></div>
+<div class="center">
+	<div class="block block left"><p>
+		<ul style="height: min(0, 0);">
+		  <li>div</li>
+		  <li>span</li>
+		  <li>a</li>
+		  <li>p</li>
+		  <li>img</li>
+		  <li>table</li>
+		  <li>ul</li>
+		  <li>h1-3</li>
+		  <li>iframe</li>
+		  <li>meta (настроить кодировку, keywords, description)</li>
+		  <li>элементы форм (input, select, button и пр.)</li>
+		  <li>форматирование текста</li>
+		  <li>тэг picture + source для выбора изображений</li>
+		</ul>
+		</p>
+	</div>
+	
+	<div class="block">
+		<p>задание 2</p>
+		<table>
+		  <tr>
+		    <th>селекторы CSS: по имени тега, по id, по class, сложный селектор</th>
+		    <th>нуу , стили по классам назначал</th>
+		  </tr>	
+
+		  <tr>
+		    <th>свойства CSS: цвет текста и фона, размер, положение</th>
+		    <th><div style="background-color: red;">я div красного цвета</div></th>
+		  </tr>
+
+		  <tr>
+		    <th>CSS3: анимация свойств (transition, keyframes)</th>
+		    <th><button class="buttonn">qwddwq</button><div class="boxx">eee</div></th>
+		  </tr>	
+		  <tr>
+		    <th>@media: изменение стилей в зависимости от размера или ориентации устройства</th>
+		    <th><div class="element">я div красного цвета</div></th>
+		  </tr>	
+		  <tr>
+		    <th>позиционирование элементов и z-index</th>
+		    <th><div style="background-color: red;">я div красного цвета</div></th>
+		  </tr>	
+		  <tr>
+		    <th>подключение внешних шрифтов</th>
+		    <th>
+		    	
+		    	<div style="font-family: Bungee Spice, sans-serif;background-color: red;margin: 20px">Bungee Spice</div>
+		    	<div style="font-family: Chokokutai, system-ui;background-color: red;margin: 20px">Chokokutai</div>
+		    </th>
+
+		  </tr>		  
+		  <tr>
+		    <th>transform</th>
+		    <th><div class="transformeddd" style="background-color: red;">я div красного цвета и в таком положении из за transform</div></th>
+		  </tr>	
+		  <tr>
+		    <th>псевдоклассы</th>
+		    <th><div style="background-color: red;"><p class="hmmm">наведи на меня</p></div></th>
+		  </tr>	
+		  <tr>
+		    <th>псевдоэлементы</th>
+		    <th><div style="background-color: red;">я div красного цвета</div></th>
+		  </tr>	
+		  <tr>
+		    <th>вычисления: calc</th>
+		    <th><div style="background-color: red;width: calc(50% - 20px);height: calc(100px + 2em);">я div красного цвета, но меня посчитали </div></th>
+		  </tr>	
+		  <tr>
+		    <th>display: flex</th>
+		    <th><p>вот эти серые блоки могут быть примером</p></th>
+		  </tr>	
+
+		</table>
+
+	</div>
+</div>
+
+
+</body>
+</html>

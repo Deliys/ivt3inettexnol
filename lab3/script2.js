@@ -17,7 +17,7 @@ document.getElementById('changeStyleButton').addEventListener('click', function(
         item.style.fontWeight = 'bold';
     });
 });
-document.getElementById('changeStyleButtonw').addEventListener('click', function() {
+document.getElementById('changeStyleButton2').addEventListener('click', function() {
     let menuItems = document.querySelectorAll('#menu li');
     
     menuItems.forEach(item => {

@@ -74,6 +74,9 @@
 
 		  $("#image-caption").text($(this).find("img").attr("alt"));
 		  $("#image-viewer").show();
+
+		  currentImages = $("#image-list a").index($(this));
+
 		});
 
 		currentImages = 0

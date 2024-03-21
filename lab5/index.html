@@ -80,12 +80,15 @@
 
 		// Переход к следующему изображению
 		$("#next-image").click(function() {
+			currentImages+=1;
 			console.log(currentImages);
+
 		});
 
 		// Переход к предыдущему изображению
 		$("#prev-image").click(function() {
-		  console.log(currentImages);
+			currentImages-=1;
+			console.log(currentImages);
 		});
 
 		// Эффект прокрутки изображений

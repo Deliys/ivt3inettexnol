@@ -82,7 +82,9 @@
 		$("#next-image").click(function() {
 			currentImages+=1;
 			console.log(currentImages);
-			console.log(data["images"]);
+			console.log(obj.images.length); // Выводит длину массива
+
+			console.log(obj.images[2]); 
 
 
 		});

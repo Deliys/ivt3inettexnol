@@ -83,7 +83,11 @@
 			currentImages+=1;
 
 			if (currentImages>=(data.length-1)){
+				console.log(currentImages);
+
 				currentImages = 0;
+				console.log(currentImages);
+
 			};
 
 		  $("#current-image").attr("src", data.images[currentImages].file);

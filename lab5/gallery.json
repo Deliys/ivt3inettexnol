@@ -1,0 +1,8 @@
+{
+        "gallery": "My gallery",
+        "images": [
+          {"name": "Photo 1", "file": "https://famt.ru/wp-content/uploads/2019/05/sonnik-govoryaschiy-kot.jpg" ,"about":"фотка этого кота лучшее что есть в этой лабе"},
+          {"name": "Photo 2", "file": "https://avatars.mds.yandex.net/i?id=fe530ed2d4c43a7ea1080762bf2e0fa6297f7ea1-12608381-images-thumbs&n=13","about":"хмм, а описание сложно придумать"},
+          {"name": "Photo 3", "file": "https://avatars.mds.yandex.net/i?id=30594a314f9ad798f0e7b0191a9f5b9415175d34-10701944-images-thumbs&n=13","about":"еще один кот , а нет . это закат"}
+        ]
+}

@@ -22,119 +22,116 @@
 <body>
 
   <div id="gallery">
-    <h1>Моя галерея</h1>
-    <ul id="image-list"></ul>
-    <div id="image-viewer">
-      <img id="current-image">
-      <div id="image-caption"></div>
-      <div id="image-nav">
-        <button id="prev-image">Предыдущее</button>
-        <button id="next-image">Следующее</button>
-      </div>
-    </div>
-    <div id="image-slider"></div>
-    <div id="accordion">
-      <h3>Категории</h3>
-      <div>
-        <ul>
-          <li><a href="#">Природа</a></li>
-          <li><a href="#">Животные</a></li>
-          <li><a href="#">Люди</a></li>
-        </ul>
-      </div>
-      <h3>Сортировка</h3>
-      <div>
-        <ul>
-          <li><a href="#">По дате</a></li>
-          <li><a href="#">По названию</a></li>
-          <li><a href="#">По размеру</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="datepicker"></div>
-    <div id="progressbar"></div>
-    <button id="toggle-classes">Переключить классы</button>
+	<h1>Моя галерея</h1>
+	<ul id="image-list"></ul>
+	<div id="image-viewer">
+	  <img id="current-image">
+	  <div id="image-caption"></div>
+	  <div id="image-nav">
+		<button id="prev-image">Предыдущее</button>
+		<button id="next-image">Следующее</button>
+	  </div>
+	</div>
+	<div id="image-slider"></div>
+	<div id="accordion">
+	  <h3>Категории</h3>
+	  <div>
+		<ul>
+		  <li><a href="#">Природа</a></li>
+		  <li><a href="#">Животные</a></li>
+		  <li><a href="#">Люди</a></li>
+		</ul>
+	  </div>
+	  <h3>Сортировка</h3>
+	  <div>
+		<ul>
+		  <li><a href="#">По дате</a></li>
+		  <li><a href="#">По названию</a></li>
+		  <li><a href="#">По размеру</a></li>
+		</ul>
+	  </div>
+	</div>
+	<div id="datepicker"></div>
+	<div id="progressbar"></div>
+	<button id="toggle-classes">Переключить классы</button>
   </div>
 
   <script>
-    // Загрузка JSON-файла с описанием галереи
-    $.ajax({
-      url: "gallery.json",
-      dataType: "json",
-      success: function(data) {
-        // Показ изображений
-        $.each(data.images, function(i, image) {
-          $("#image-list").append("<li><a href='" + image.file + "'><img src='" + image.file + "' alt='" + image.name + "'></a></li>");
-        });
+	// Загрузка JSON-файла с описанием галереи
+	$.ajax({
+	  url: "gallery.json",
+	  dataType: "json",
+	  success: function(data) {
+		// Показ изображений
+		$.each(data.images, function(i, image) {
+		  $("#image-list").append("<li><a href='" + image.file + "'><img src='" + image.file + "' alt='" + image.name + "'></a></li>");
+		});
 
-        // Увеличение изображений
-        $("#image-list a").click(function(e) {
-          e.preventDefault();
-          $("#current-image").attr("src", $(this).attr("href"));
+		// Увеличение изображений
+		$("#image-list a").click(function(e) {
+		  e.preventDefault();
+		  $("#current-image").attr("src", $(this).attr("href"));
 
-          $("#image-caption").text($(this).find("img").attr("alt"));
-          $("#image-viewer").show();
-        });
+		  $("#image-caption").text($(this).find("img").attr("alt"));
+		  $("#image-viewer").show();
+		});
 
-        // Переход к следующему изображению
-        $("#next-image").click(function() {
-          var currentImage = $("#current-image");
-          var nextImage = currentImage.next("img");
-          if (nextImage.length) {
-            currentImage.attr("src", nextImage.attr("src"));
-            $("#image-caption").text(nextImage.attr("alt"));
-          }
-        });
+		currentImages = 0
 
-        // Переход к предыдущему изображению
-        $("#prev-image").click(function() {
-          var currentImage = $("#current-image");
-          var prevImage = currentImage.prev("img");
-          if (prevImage.length) {
-            currentImage.attr("src", prevImage.attr("src"));
-            $("#image-caption").text(prevImage.attr("alt"));
-          }
-        });
+		// Переход к следующему изображению
+		$("#next-image").click(function() {
+			console.log(currentImages);
+		});
 
-        // Эффект прокрутки изображений
-        $("#image-slider").slider({
-          min: 0,
-          max: data.images.length - 1,
-          value: 0,
-          slide: function(event, ui) {
-            $("#current-image").attr("src", data.images[ui.value].file);
-            $("#image-caption").text(data.images[ui.value].name);
-          }
-        });
+		// Переход к предыдущему изображению
+		$("#prev-image").click(function() {
+		  var currentImage = $("#current-image");
+		  var prevImage = currentImage.prev("img");
+		  if (prevImage.length) {
+			currentImage.attr("src", prevImage.attr("src"));
+			$("#image-caption").text(prevImage.attr("alt"));
+		  }
+		});
 
-        // Меню типа "аккордион"
-        $("#accordion").accordion();
+		// Эффект прокрутки изображений
+		$("#image-slider").slider({
+		  min: 0,
+		  max: data.images.length - 1,
+		  value: 0,
+		  slide: function(event, ui) {
+			$("#current-image").attr("src", data.images[ui.value].file);
+			$("#image-caption").text(data.images[ui.value].name);
+		  }
+		});
 
-        // Выбор даты
-        $("#datepicker").datepicker();
+		// Меню типа "аккордион"
+		$("#accordion").accordion();
 
-        // Статус загрузки изображений
-        $("#image-list img").each(function() {
-          $(this).on("load", function() {
-            $("#progressbar").progressbar("value", $("#progressbar").progressbar("value") + 1);
-          });
-        });
-        $("#progressbar").progressbar({
-          value: 0,
-          max: $("#image-list img").length
-        });
+		// Выбор даты
+		$("#datepicker").datepicker();
 
-        // Переключение по категориям изображений
-        $("#accordion h3").click(function() {
-          $(this).next().toggle();
-        });
+		// Статус загрузки изображений
+		$("#image-list img").each(function() {
+		  $(this).on("load", function() {
+			$("#progressbar").progressbar("value", $("#progressbar").progressbar("value") + 1);
+		  });
+		});
+		$("#progressbar").progressbar({
+		  value: 0,
+		  max: $("#image-list img").length
+		});
 
-        // Смена классов изображений
-        $("#toggle-classes").click(function() {
-          $("#image-list img").toggleClass("grayscale");
-        });
-      }
-    });
+		// Переключение по категориям изображений
+		$("#accordion h3").click(function() {
+		  $(this).next().toggle();
+		});
+
+		// Смена классов изображений
+		$("#toggle-classes").click(function() {
+		  $("#image-list img").toggleClass("grayscale");
+		});
+	  }
+	});
   </script>
 </body>
 </html>

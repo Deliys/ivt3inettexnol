@@ -93,6 +93,8 @@
 			}
 
 		  $("#current-image").attr("src", data.images[currentImages].file);
+		  $("#image-caption").text(data.images[currentImages].name);
+
 		  console.log(data.images[currentImages].file)
 		  //$("#image-caption").text($(this).find("img").attr("alt"));
 		  //$("#image-viewer").show();
@@ -114,6 +116,8 @@
 			}
 
 		  $("#current-image").attr("src", data.images[currentImages].file);
+		  $("#image-caption").text(data.images[currentImages].name);
+		  
 		  console.log(data.images[currentImages].file)
 		});
 

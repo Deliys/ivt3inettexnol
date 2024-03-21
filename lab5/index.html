@@ -71,8 +71,7 @@
         $("#image-list a").click(function(e) {
           e.preventDefault();
           $("#current-image").attr("src", $(this).attr("href"));
-          $("#current-image").attr("widht", "500px";
-
+          
           $("#image-caption").text($(this).find("img").attr("alt"));
           $("#image-viewer").show();
         });

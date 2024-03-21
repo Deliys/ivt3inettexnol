@@ -204,6 +204,21 @@
 		});
 	  }
 	});
+
+
+	    //Категории изображений Tabs
+    $(function() {
+        $( "#tabs" ).tabs();
+    });
+    
+    //12 вариант - эффект Shake
+    $( "#buttonShake" ).click(function() {
+      $( "#image-collection" ).toggle( "shake" );
+    });
+    
+    $(document).ready(function() {
+        $(".ui-progressbar-value").css({ 'background': 'green' });
+    });
   </script>
 </body>
 </html>

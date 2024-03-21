@@ -82,13 +82,12 @@
 		$("#next-image").click(function() {
 			currentImages+=1;
 
-			if (currentImages<data.length){
-				console.log(currentImages);
-
-				currentImages = 0;
-				console.log(currentImages);
-
-			};
+			if (currentImages < data.length) {
+			  console.log(currentImages);
+			} else {
+			  currentImages = 0; // Сбросить до 0 после увеличения до data.length
+			  console.log(currentImages);
+			}
 
 		  $("#current-image").attr("src", data.images[currentImages].file);
 		  console.log(data.images[currentImages].file)

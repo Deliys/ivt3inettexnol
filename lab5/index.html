@@ -14,7 +14,7 @@
 		}
 
 
-		#current-image img{
+		#current-image {
 			width: 600px;
 		}
 	</style>
@@ -71,7 +71,7 @@
         $("#image-list a").click(function(e) {
           e.preventDefault();
           $("#current-image").attr("src", $(this).attr("href"));
-          
+
           $("#image-caption").text($(this).find("img").attr("alt"));
           $("#image-viewer").show();
         });

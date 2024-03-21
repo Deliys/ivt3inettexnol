@@ -85,12 +85,7 @@
 
 		// Переход к предыдущему изображению
 		$("#prev-image").click(function() {
-		  var currentImage = $("#current-image");
-		  var prevImage = currentImage.prev("img");
-		  if (prevImage.length) {
-			currentImage.attr("src", prevImage.attr("src"));
-			$("#image-caption").text(prevImage.attr("alt"));
-		  }
+		  console.log(currentImages);
 		});
 
 		// Эффект прокрутки изображений

@@ -1,4 +1,4 @@
-// Шаг 1: Копирование текста всех пунктов меню в конец абзаца при нажатии на кнопку
+
 document.getElementById('copyButton').addEventListener('click', function() {
     let menuItems = document.querySelectorAll('#menu li');
     let outputParagraph = document.getElementById('output');
@@ -8,7 +8,7 @@ document.getElementById('copyButton').addEventListener('click', function() {
     });
 });
 
-// Шаг 2: Изменение определенного стиля всех элементов одного класса при нажатии на кнопку
+//  Изменение определенного стиля всех элементов одного класса при нажатии на кнопку
 document.getElementById('changeStyleButton').addEventListener('click', function() {
     let menuItems = document.querySelectorAll('#menu li');
     
@@ -26,7 +26,7 @@ document.getElementById('changeStyleButton2').addEventListener('click', function
     });
 });
 
-// Шаг 3: Поиск строки в пунктах меню с подсветкой найденных результатов
+//Поиск строки в пунктах меню с подсветкой найденных результатов
 document.getElementById('searchInput').addEventListener('input', function() {
     let searchValue = this.value.toLowerCase();
     let menuItems = document.querySelectorAll('#menu li');

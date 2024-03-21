@@ -82,7 +82,7 @@
 		$("#next-image").click(function() {
 			currentImages+=1;
 
-			if (currentImages>=(data.length-1)){
+			if (currentImages<data.length){
 				console.log(currentImages);
 
 				currentImages = 0;

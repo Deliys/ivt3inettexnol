@@ -25,7 +25,7 @@
     <h1>Моя галерея</h1>
     <ul id="image-list"></ul>
     <div id="image-viewer">
-      <img width="600px" id="current-image">
+      <img id="current-image">
       <div id="image-caption"></div>
       <div id="image-nav">
         <button id="prev-image">Предыдущее</button>
@@ -71,6 +71,8 @@
         $("#image-list a").click(function(e) {
           e.preventDefault();
           $("#current-image").attr("src", $(this).attr("href"));
+          $("#current-image").attr("widht", "500px";
+
           $("#image-caption").text($(this).find("img").attr("alt"));
           $("#image-viewer").show();
         });
